@@ -6,6 +6,7 @@ public class libreriaContext: DbContext {
 
 public DbSet<Autor>? Autor {get;set;}
 
+public DbSet<Genero>? Genero {get; set;}
 
 public libreriaContext(DbContextOptions<libreriaContext> options) : base(options){}
 }

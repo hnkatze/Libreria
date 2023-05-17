@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 public class Libros{
 [Key]
-public Guid LibroId{get; set;}
+public Guid LibroId{get; set;}= Guid.NewGuid();
 
 [Required]
 [MaxLength(100)]

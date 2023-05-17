@@ -2,13 +2,13 @@ using System.ComponentModel.DataAnnotations;
 
 public class Autor{
 [Key]
-public Guid AutorId {get; set;}
+ public Guid AutorId { get; set; } = Guid.NewGuid();
 [Required]
-public String? Nombre{get; set;}
+public String Nombre{get; set;}
 [Required]
-public String? Apellido{get;set;}
+public String Apellido{get;set;}
 [Required]
-public String? Nacionalidad{get;set;}
+public String Nacionalidad{get;set;}
 
 
 

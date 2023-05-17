@@ -15,20 +15,16 @@ public AutorService(libreriaContext DbContext) => context = DbContext;
 //Async await
 
 public async Task insertar(Autor inputAutor ){
-    inputAutor.AutorId = Guid.NewGuid();
    await context.AddAsync(inputAutor);
     await context.SaveChangesAsync();
 }
 
 
-//READ - obtener de la db 
-public IEnumerable<Autor>? obtener(){
-return context.Autor;
+    //READ - obtener de la db 
+    public IEnumerable<Autor> obtener() => context.Autor;
 
-}
-
-//UPDATE
-public async Task Actualizar(Guid id, Autor inputAutor){
+    //UPDATE
+    public async Task Actualizar(Guid id, Autor inputAutor){
     var autor = context.Autor.Find(id);
     if(autor != null){
         autor.Nombre = inputAutor.Nombre;
@@ -39,6 +35,8 @@ public async Task Actualizar(Guid id, Autor inputAutor){
 }
 
 
+
+
 public async Task eliminar(Guid id){
     var autor = context.Autor.Find(id);
     if(autor != null){
@@ -47,7 +45,10 @@ public async Task eliminar(Guid id){
     }
 }
 
-}
+public async Task<bool> ExisteAutor(Guid autorId) {
+    var autor = await context.Autor.FindAsync(autorId);
+    return autor != null;
+}}
 
 
 public interface IAutorService{

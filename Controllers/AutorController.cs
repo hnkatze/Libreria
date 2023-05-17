@@ -16,9 +16,13 @@ public class AutorController: ControllerBase
 
     //Create
     [HttpPost]
-public IActionResult PostAutors([FromBody] Autor newAutor) {
-    autorService.insertar(newAutor);
-return Ok();
+public async Task<IActionResult> PostAutors([FromBody] Autor newAutor) {
+    await autorService.insertar(newAutor);
+    var result = newAutor.AutorId;
+    if(result == null){
+        return BadRequest();
+    }
+return Ok("Se ingreso Correctamente");
 
 }
 //Read
@@ -32,7 +36,7 @@ return Ok(autorService.obtener());
 [HttpPut("{id}")]
 public IActionResult UpdateAutores([FromBody] Autor autorActualizar, Guid id) {
     autorService.Actualizar(id,autorActualizar);
-return Ok();
+return Ok("Actualizado Corretcamente");
 }
 
 //Delete
@@ -40,6 +44,9 @@ return Ok();
 
 public IActionResult DeleteAutores(Guid id) {
 return Ok(autorService.eliminar(id));
+
+
+
 }
 
 
