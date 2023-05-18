@@ -4,9 +4,9 @@ namespace libreria.Service;
 
 public class GeneroService : IGeneroService {
 //Inyeccion de dependencias.
-libreriaContext context;
+libreriaContext context1;
 
-public GeneroService(libreriaContext DbContext) => context = DbContext;
+public GeneroService(libreriaContext DbContext) => context1 = DbContext;
 
 //CRUD
 
@@ -15,20 +15,20 @@ public GeneroService(libreriaContext DbContext) => context = DbContext;
 //Async await
 
 public async Task insertar(Genero inputGenero ){
-   await context.AddAsync(inputGenero);
-    await context.SaveChangesAsync();
+   await context1.AddAsync(inputGenero);
+    await context1.SaveChangesAsync();
 }
 
 
     //READ - obtener de la db 
-    public IEnumerable<Genero> obtener() => context.Genero;
+    public IEnumerable<Genero> obtener() => context1.Genero;
 
     //UPDATE
     public async Task Actualizar(Guid id, Autor inputGenero){
-    var Genero = context.Genero.Find(id);
+    var Genero = context1.Genero.Find(id);
     if(Genero != null){
         Genero.Nombre = inputGenero.Nombre;
-        await context.SaveChangesAsync();
+        await context1.SaveChangesAsync();
     }
 }
 
@@ -36,15 +36,15 @@ public async Task insertar(Genero inputGenero ){
 
 
 public async Task eliminar(Guid id){
-    var Genero = context.Genero.Find(id);
+    var Genero = context1.Genero.Find(id);
     if(Genero!= null){
-        context.Remove(Genero);
-        await context.SaveChangesAsync();
+        context1.Remove(Genero);
+        await context1.SaveChangesAsync();
     }
 }
 
 public async Task<bool> ExisteAutor(Guid GeneroId) {
-    var autor = await context.Genero.FindAsync(GeneroId);
+    var autor = await context1.Genero.FindAsync(GeneroId);
     return autor != null;
 }
 

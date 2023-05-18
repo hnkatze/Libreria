@@ -9,6 +9,7 @@ namespace libreria.MapControllers;
 public class LibrosController: ControllerBase{
     //Atributos para la clase
     ILibroService libroService;
+    public LibrosController(ILibroService serviceLibro) => libroService = serviceLibro;
 
 [HttpPost]
 public async Task<IActionResult> PostLibros([FromBody] Libros newLibro){

@@ -9,6 +9,7 @@ namespace libreria.MapControllers;
 public class GeneroController: ControllerBase{
 //Atributos para la clase
 IGeneroService generoService;
+public GeneroController(IGeneroService serviceGeneoro) => generoService = serviceGeneoro;
 
 [HttpPost]
 public async Task<IActionResult> PostGenero(Genero newGenero){

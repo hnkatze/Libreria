@@ -4,9 +4,9 @@ namespace libreria.Service;
 
 public class LibroService : ILibroService {
 //Inyeccion de dependencias.
-libreriaContext context;
+libreriaContext contextl;
 
-public LibroService(libreriaContext DbContext) => context = DbContext;
+public LibroService(libreriaContext DbContext) => contextl = DbContext;
 
 //CRUD
 
@@ -15,23 +15,23 @@ public LibroService(libreriaContext DbContext) => context = DbContext;
 //Async await
 
 public async Task insertar(Libros inputLibros ){
-   await context.AddAsync(inputLibros);
-    await context.SaveChangesAsync();
+   await contextl.AddAsync(inputLibros);
+    await contextl.SaveChangesAsync();
 }
 
 
     //READ - obtener de la db 
-    public IEnumerable<Libros> obtener() => context.Libros;
+    public IEnumerable<Libros> obtener() => contextl.Libros;
 
     //UPDATE
     public async Task Actualizar(Guid id, Libros inputLibros){
         try{
-            var Libros = context.Libros.Find(id);
+            var Libros = contextl.Libros.Find(id);
             if(Libros != null){
         Libros.Nombre = inputLibros.Nombre;
         Libros.Paginas = inputLibros.Paginas;
         Libros.Edicion = inputLibros.Edicion;
-        await context.SaveChangesAsync();
+        await contextl.SaveChangesAsync();
     }
 
 
@@ -46,15 +46,15 @@ public async Task insertar(Libros inputLibros ){
 
 
 public async Task eliminar(Guid id){
-    var Libros = context.Libros.Find(id);
+    var Libros = contextl.Libros.Find(id);
     if(Libros != null){
-        context.Remove(Libros);
-        await context.SaveChangesAsync();
+        contextl.Remove(Libros);
+        await contextl.SaveChangesAsync();
     }
 }
 
 public async Task<bool> ExisteAutor(Guid LibrosId) {
-    var Libros = await context.Libros.FindAsync(LibrosId);
+    var Libros = await contextl.Libros.FindAsync(LibrosId);
     return Libros != null;
 }
 }

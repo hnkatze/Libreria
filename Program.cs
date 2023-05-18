@@ -10,7 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSqlServer<libreriaContext>("Data Source=localhost,1433; Initial Catalog=LibreriaDB; user ID=SA; Password=C@m1l1t0*; TrustServerCertificate=True");
-builder.Services.AddScoped<IAutorService, AutorService>();
+builder.Services.AddScoped<IAutorService, AutorService>();//contrucctor de servicios
+builder.Services.AddScoped<IGeneroService, GeneroService>();
+builder.Services.AddScoped<ILibroService, LibroService>();
 
 var app = builder.Build();
 
