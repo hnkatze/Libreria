@@ -44,7 +44,7 @@ public async Task eliminar(Guid id){
 }
 
 public async Task<bool> ExisteAutor(Guid GeneroId) {
-    var autor = await context.Autor.FindAsync(GeneroId);
+    var autor = await context.Genero.FindAsync(GeneroId);
     return autor != null;
 }
 

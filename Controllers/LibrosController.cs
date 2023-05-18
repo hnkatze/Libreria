@@ -1,3 +1,4 @@
+using libreria.Service;
 using Microsoft.AspNetCore.Mvc;
 namespace libreria.MapControllers;
 
@@ -6,29 +7,37 @@ namespace libreria.MapControllers;
 [Route("[Controller]")]
 
 public class LibrosController: ControllerBase{
-//Atributos para la clase
-
+    //Atributos para la clase
+    ILibroService libroService;
 
 [HttpPost]
-public IActionResult PostLibros([FromBody] Libros newLibro){
-return Ok();
+public async Task<IActionResult> PostLibros([FromBody] Libros newLibro){
+    await libroService.insertar(newLibro);
+    var res = newLibro.LibroId;
+    if(res == null){
+return BadRequest();
+    }
+
+return Ok("Se ingreso Correctamente");
 }
 
 [HttpGet]
 public IActionResult GetLibros(){
-return Ok();
+return Ok(libroService.obtener());
 }
 
 
 [HttpPut("{id}")]
-public IActionResult UpdateLibros(){
+public IActionResult UpdateLibros( Libros librosActualizar, Guid id){
+    libroService.Actualizar(id,librosActualizar);
 return Ok();
 }
 
 
 [HttpDelete("{id}")]
-public IActionResult DeleteLibros(){
-return Ok();
+public IActionResult DeleteLibros( Guid id){
+libroService.eliminar(id);
+return Ok("Se Elimino Correctamente");
 }
 
 }
