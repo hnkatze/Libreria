@@ -4,7 +4,7 @@ namespace libreria.MapControllers;
 
 //atributos para los controles
 [ApiController]
-[Route("[Controller]")]
+[Route("[controller]")]
 
 public class AutorController: ControllerBase
 {

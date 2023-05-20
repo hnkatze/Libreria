@@ -140,3 +140,8 @@ C:\Users\henri\OneDrive\Escritorio\Libreria\obj\Debug\net7.0\refint\PROGR.dll
 C:\Users\henri\OneDrive\Escritorio\Libreria\obj\Debug\net7.0\PROGR.pdb
 C:\Users\henri\OneDrive\Escritorio\Libreria\obj\Debug\net7.0\PROGR.genruntimeconfig.cache
 C:\Users\henri\OneDrive\Escritorio\Libreria\obj\Debug\net7.0\ref\PROGR.dll
+C:\Users\Katze\Desktop\PROGR\bin\Debug\net7.0\Humanizer.dll
+C:\Users\Katze\Desktop\PROGR\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Katze\Desktop\PROGR\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Katze\Desktop\PROGR\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\Katze\Desktop\PROGR\bin\Debug\net7.0\System.CodeDom.dll

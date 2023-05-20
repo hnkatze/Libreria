@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\henri\\OneDrive\\Escritorio\\Libreria\\PROGR.csproj": {}
+    "C:\\Users\\Katze\\Desktop\\PROGR\\PROGR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\henri\\OneDrive\\Escritorio\\Libreria\\PROGR.csproj": {
+    "C:\\Users\\Katze\\Desktop\\PROGR\\PROGR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\henri\\OneDrive\\Escritorio\\Libreria\\PROGR.csproj",
+        "projectUniqueName": "C:\\Users\\Katze\\Desktop\\PROGR\\PROGR.csproj",
         "projectName": "PROGR",
-        "projectPath": "C:\\Users\\henri\\OneDrive\\Escritorio\\Libreria\\PROGR.csproj",
-        "packagesPath": "C:\\Users\\henri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\henri\\OneDrive\\Escritorio\\Libreria\\obj\\",
+        "projectPath": "C:\\Users\\Katze\\Desktop\\PROGR\\PROGR.csproj",
+        "packagesPath": "C:\\Users\\Katze\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Katze\\Desktop\\PROGR\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\henri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Katze\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,6 +45,12 @@
               "version": "[7.0.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.5, )"
             },
@@ -81,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

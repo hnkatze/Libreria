@@ -4,41 +4,50 @@ namespace libreria.MapControllers;
 
 //atributos para los controles
 [ApiController]
-[Route("[Controller]")]
+[Route("[controller]")]
 
-public class GeneroController: ControllerBase{
-//Atributos para la clase
-IGeneroService generoService;
-public GeneroController(IGeneroService serviceGeneoro) => generoService = serviceGeneoro;
+public class GeneroController : ControllerBase
+{
+    //Atributos para la clase
+    IGeneroService generoService;
+    public GeneroController(IGeneroService serviceGenero) => generoService = serviceGenero;
 
-[HttpPost]
-public async Task<IActionResult> PostGenero(Genero newGenero){
-await generoService.insertar(newGenero);
-var result = newGenero.GeneroId;
-if(result == null){
-    return BadRequest();
-}
-return Ok("Se ingreso Correctamente");
-}
+    [HttpPost]
+    public async Task<IActionResult> PostGenero(Genero newGenero)
+    {
+        await generoService.insertar(newGenero);
+        var result = newGenero.GeneroId;
+        if (result == null)
+        {
 
-[HttpGet]
-public IActionResult GetGenero(){
+            return BadRequest();
+        }
+        return Ok("Se ingreso Correctamente");
+    }
 
-return Ok(generoService.obtener());
-}
+    [HttpGet]
+    public IActionResult GetGenero()
+    {
 
-//Update
-[HttpPut("{id}")]
-public IActionResult UpdateGenero(Genero generoActualizar, Guid id){
-    generoService.Actualizar(id,generoActualizar);
-return Ok("Se Actualizo Correctamente");
-}
+        return Ok(generoService.obtener());
+    }
+
+    //Update
+    [HttpPut("{id}")]
+    public IActionResult UpdateGenero(Genero generoActualizar, Guid id)
+    {
+
+        generoService.Actualizar(id, generoActualizar);
+
+        return Ok("Se Actualizo Correctamente");
+    }
 
 
-[HttpDelete("{id}")]
-public IActionResult DeleteGenero(Guid id){
-    generoService.eliminar(id);
-    return Ok("Se elimino Correctamente");
-}
+    [HttpDelete("{id}")]
+    public IActionResult DeleteGenero(Guid id)
+    {
+        generoService.eliminar(id);
+        return Ok("Se elimino Correctamente");
+    }
 
 }
