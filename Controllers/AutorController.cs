@@ -34,8 +34,8 @@ return Ok(autorService.obtener());
 
 //Update
 [HttpPut("{id}")]
-public IActionResult UpdateAutores([FromBody] Autor autorActualizar, Guid id) {
-    autorService.Actualizar(id,autorActualizar);
+public async Task<IActionResult> UpdateAutores([FromBody] Autor autorActualizar, Guid id) {
+   await  autorService.Actualizar(id,autorActualizar);
 return Ok("Actualizado Corretcamente");
 }
 

@@ -34,10 +34,10 @@ public class GeneroController : ControllerBase
 
     //Update
     [HttpPut("{id}")]
-    public IActionResult UpdateGenero(Genero generoActualizar, Guid id)
+    public async Task<IActionResult> UpdateGenero(Genero generoActualizar, Guid id)
     {
 
-        generoService.Actualizar(id, generoActualizar);
+        await generoService.Actualizar(id, generoActualizar);
 
         return Ok("Se Actualizo Correctamente");
     }

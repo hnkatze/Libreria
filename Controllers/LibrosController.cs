@@ -34,10 +34,10 @@ public class LibrosController : ControllerBase
 
 
     [HttpPut("{id}")]
-    public IActionResult UpdateLibros(Libros librosActualizar, Guid id)
+    public async Task<IActionResult> UpdateLibros(Libros librosActualizar, Guid id)
     {
-        libroService.Actualizar(id, librosActualizar);
-        return Ok();
+        await libroService.Actualizar(id, librosActualizar);
+        return Ok("Se actualizo Correctamente");
     }
 
 

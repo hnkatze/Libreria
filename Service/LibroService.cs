@@ -28,8 +28,7 @@ public class LibroService : ILibroService
     //UPDATE
     public async Task Actualizar(Guid id, Libros inputLibros)
     {
-        try
-        {
+     
             var Libros = context2.Libros.Find(id);
             if (Libros != null)
             {
@@ -38,16 +37,7 @@ public class LibroService : ILibroService
                 Libros.Paginas = inputLibros.Paginas;
 
                 await context2.SaveChangesAsync();
-            }
-
-
-        }
-        catch (Exception x)
-        {
-            Console.WriteLine("Error al actualizar" + x.Message);
-        }
-
-    }
+            }}
 
 
 
