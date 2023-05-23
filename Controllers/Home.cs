@@ -7,7 +7,7 @@ public class HomeController : ControllerBase
 {
 
 
-libreriaContext? Dbcontext;
+libreriaContext Dbcontext;
 
 
 public HomeController(libreriaContext db){
